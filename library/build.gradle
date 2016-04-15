@@ -1,4 +1,23 @@
+buildscript {
+    repositories {
+        mavenCentral()
+    }
+    dependencies {
+        classpath 'com.android.tools.build:gradle:1.0.0'
+    }
+}
+
 apply plugin: 'com.android.library'
+
+allprojects {
+    version = VERSION_NAME
+    group = GROUP
+
+    repositories {
+        mavenCentral()
+    }
+}
+
 
 android {
     compileSdkVersion 23
@@ -7,9 +26,8 @@ android {
     defaultConfig {
         minSdkVersion 14
         targetSdkVersion 23
-        versionCode 6
-        versionName "1.1.2"
     }
+
     buildTypes {
         release {
             minifyEnabled false
@@ -28,4 +46,5 @@ dependencies {
     compile 'com.bartoszlipinski:viewpropertyobjectanimator:1.2.0'
 }
 
-apply from: 'maven-push.gradle'
+apply from: 'https://raw.github.com/chrisbanes/gradle-mvn-push/master/gradle-mvn-push.gradle'
+
