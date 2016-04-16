@@ -22,3 +22,8 @@
 -keep interface android.support.v7.** { *; }
 
 -keep class com.bartoszlipinski.** { *; }
+-keep interface com.bartoszlipinski.** { *; }
+
+# Keep all floatingsearchview classes
+-keep class com.arlib.** { *; }
+
